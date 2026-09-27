@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a problem with the Markdown preview.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the problem and whether it happens every time or intermittently.
+      placeholder: The preview sometimes fails to open after I close a browser tab.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the editor commands and whether the second attempt is in the same buffer or another document.
+      placeholder: |
+        1. Open a Markdown document and run :MdscopeStart.
+        2. Close the preview browser tab.
+        3. Open another Markdown document and run :MdscopeStart.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: close-method
+    attributes:
+      label: How did you close the preview?
+      options:
+        - Browser tab
+        - ":MdscopeStop"
+        - Neovim buffer
+        - Neovim exit
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and logs
+      description: Include Neovim/Node versions and relevant messages if available; omit private paths and secrets.
+    validations:
+      required: false
