@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mdscope preview</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="toolbar">
+    <span class="brand">mdscope <span class="brand-muted">/ preview</span></span>
+    <div class="theme-selector" role="group" aria-label="Color theme">
+      <button id="theme-light" type="button" aria-pressed="false"><span aria-hidden="true">☀</span> Light</button>
+      <button id="theme-dark" type="button" aria-pressed="false"><span aria-hidden="true">☾</span> Dark</button>
+    </div>
+  </header>
+  <main><article id="document" class="markdown" aria-live="polite"></article><p id="status" role="status"></p></main>
+  <dialog id="inspector" aria-label="Diagram inspector">
+    <div class="inspector-toolbar">
+      <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+      <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+      <button id="fit-diagram" type="button" aria-label="Fit diagram">Fit</button>
+      <button id="reset-diagram" type="button" aria-label="Reset zoom">Reset</button>
+      <button id="close-diagram" type="button" aria-label="Close diagram">Close</button>
+    </div>
+    <div id="diagram-viewport" aria-label="Diagram canvas"></div>
+  </dialog>
+</body>
+</html>

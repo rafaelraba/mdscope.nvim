@@ -1,0 +1,22 @@
+{
+  "name": "mdscope-preview",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaelraba/mdscope.nvim.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "esbuild web/app.js --bundle --minify --format=iife --target=es2020 --legal-comments=linked --outfile=dist/app.js && esbuild web/mermaid.js --bundle --minify --format=esm --target=es2020 --legal-comments=linked --outfile=dist/mermaid.js && node scripts/generate-third-party-licenses.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "markdown-it": "^14.1.0",
+    "playwright": "^1.63.0"
+  },
+  "dependencies": {
+    "highlight.js": "^11.12.0",
+    "mermaid": "^11.17.2"
+  }
+}
